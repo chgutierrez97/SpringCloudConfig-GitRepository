@@ -1,9 +1,9 @@
 server:
-    port: 8001
+    port: ${PORT:${SERVER_PORT:0}}
     
 eureka:
   instance:
-    hostname: localhost
+    hostname: ${spring.application.name}:${spring.application.instance:${random.value}} 
   client:
     register-with-eureka: true
     fetch-registry: true  
